@@ -1,4 +1,4 @@
-package com.genius.interview.design;
+package com.genius.interview.design.singleton;
 
 public class SingletonHungry {
 
