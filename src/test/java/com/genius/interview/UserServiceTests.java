@@ -1,7 +1,5 @@
 package com.genius.interview;
 
-import com.genius.interview.design.factory.FactoryShare;
-import com.genius.interview.design.factory.FactoryShareMethod;
 import com.genius.interview.proxy.UserService;
 import com.genius.interview.proxy.UserServiceImpl;
 import com.genius.interview.proxy.UserServiceProxyFactory;
