@@ -1,5 +1,8 @@
 package com.genius.interview.design.decorator;
 
+/**
+ * 装饰器（常用装饰器类：Collections.SynchronizedList; BufferedInputStream）
+ */
 public class IPhoneScreenFilmDecorator implements Phone {
 
     private final Phone phone;
