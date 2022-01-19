@@ -19,4 +19,10 @@ public class User1ServiceImpl implements User1Service {
     public void addRequired(User1 user) {
         user1Dao.save(user);
     }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public void addRequiredNew(User1 user) {
+        user1Dao.save(user);
+    }
 }

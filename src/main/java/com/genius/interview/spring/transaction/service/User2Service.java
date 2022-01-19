@@ -8,4 +8,8 @@ public interface User2Service {
 
     void addRequiredException(User2 user);
 
+    void addRequiredNew(User2 user);
+
+    void addRequiredNewException(User2 user);
+
 }

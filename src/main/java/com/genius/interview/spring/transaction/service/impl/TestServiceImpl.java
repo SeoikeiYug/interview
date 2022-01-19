@@ -20,6 +20,83 @@ public class TestServiceImpl implements TestService {
     private User2Service user2Service;
 
     @Override
+    public void non_transaction_new_required_required_exception() {
+        User1 user1 = new User1();
+        user1.setName("张三");
+        user1Service.addRequiredNew(user1);
+
+        User2 user2 = new User2();
+        user2.setName("李四");
+        user2Service.addRequiredNew(user2);
+
+        throw new RuntimeException();
+    }
+
+    @Override
+    public void non_transaction_new_required_exception() {
+        User1 user1 = new User1();
+        user1.setName("张三");
+        user1Service.addRequiredNew(user1);
+
+        User2 user2 = new User2();
+        user2.setName("李四");
+        user2Service.addRequiredNewException(user2);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void transaction_required_required_new_required_new_exception() {
+        User1 user1 = new User1();
+        user1.setName("张三");
+        user1Service.addRequired(user1);
+
+        User2 user2 = new User2();
+        user2.setName("李四");
+        user2Service.addRequiredNew(user2);
+
+        User2 user3 = new User2();
+        user3.setName("王五");
+        user2Service.addRequiredNew(user3);
+        throw new RuntimeException();
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void transaction_required_required_new_exception() {
+        User1 user1 = new User1();
+        user1.setName("张三");
+        user1Service.addRequired(user1);
+
+        User2 user2 = new User2();
+        user2.setName("李四");
+        user2Service.addRequiredNew(user2);
+
+        User2 user3 = new User2();
+        user3.setName("王五");
+        user2Service.addRequiredNewException(user3);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void transaction_required_required_new_exception_try() {
+        User1 user1 = new User1();
+        user1.setName("张三");
+        user1Service.addRequired(user1);
+
+        User2 user2 = new User2();
+        user2.setName("李四");
+        user2Service.addRequiredNew(user2);
+
+        User2 user3 = new User2();
+        user3.setName("王五");
+        try {
+            user2Service.addRequiredException(user3);
+        } catch (Exception e) {
+            System.out.println("方法回滚");
+        }
+    }
+
+    @Override
     public void non_transaction_required_required_exception() {
         User1 user1 = new User1();
         user1.setName("张三");

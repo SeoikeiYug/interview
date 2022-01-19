@@ -29,4 +29,17 @@ public class User2ServiceImpl implements User2Service {
         throw new RuntimeException();
     }
 
+    @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public void addRequiredNew(User2 user) {
+        user2Dao.save(user);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public void addRequiredNewException(User2 user) {
+        user2Dao.save(user);
+        throw new RuntimeException();
+    }
+
 }
