@@ -20,6 +20,18 @@ public class TestServiceImpl implements TestService {
     private User2Service user2Service;
 
     @Override
+    @Transactional
+    public void transaction_required_not_support() {
+        User1 user1 = new User1();
+        user1.setName("张三");
+        user1Service.addRequired(user1);
+
+        User2 user2 = new User2();
+        user2.setName("李四");
+        user2Service.addNotSupport(user2);
+    }
+
+    @Override
     public void non_transaction_new_required_required_exception() {
         User1 user1 = new User1();
         user1.setName("张三");

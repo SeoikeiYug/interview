@@ -42,4 +42,11 @@ public class User2ServiceImpl implements User2Service {
         throw new RuntimeException();
     }
 
+    @Override
+    @Transactional(propagation = Propagation.NOT_SUPPORTED)
+    public void addNotSupport(User2 user) {
+        user2Dao.save(user);
+        throw new RuntimeException();
+    }
+
 }

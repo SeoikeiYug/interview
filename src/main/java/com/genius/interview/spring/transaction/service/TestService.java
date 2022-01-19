@@ -2,6 +2,8 @@ package com.genius.interview.spring.transaction.service;
 
 public interface TestService {
 
+    void transaction_required_not_support();
+
     void non_transaction_new_required_required_exception();
 
     void non_transaction_new_required_exception();

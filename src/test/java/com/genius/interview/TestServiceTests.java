@@ -18,6 +18,11 @@ public class TestServiceTests {
     public void contextLoads() {
     }
 
+    @Test
+    public void test_transaction_required_not_support() {
+        testService.transaction_required_not_support();
+    }
+
     /**
      * REQUIRED_NEW 调用方法无事务，事务独立，中间报错不会影响已执行事务
      */
