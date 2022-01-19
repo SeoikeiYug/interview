@@ -1,4 +1,4 @@
-package com.genius.interview.spring;
+package com.genius.interview.spring.lifecycle;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;

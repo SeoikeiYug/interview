@@ -1,4 +1,4 @@
-package com.genius.interview.spring;
+package com.genius.interview.spring.lifecycle;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
