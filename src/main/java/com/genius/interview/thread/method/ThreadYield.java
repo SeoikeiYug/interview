@@ -1,4 +1,4 @@
-package com.genius.interview.thread;
+package com.genius.interview.thread.method;
 
 public class ThreadYield {
 
