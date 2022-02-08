@@ -20,9 +20,9 @@ class A extends Thread {
 
 class B extends Thread {
 
-    private A a;
+    private final A a;
 
-    B (A a) {
+    public B (A a) {
         this.a = a;
     }
 
